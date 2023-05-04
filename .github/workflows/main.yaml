@@ -3,6 +3,8 @@ on: pull_request
 jobs:
   check_schema:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     name: Check the GraphQL schema against Hive
     steps:
       - name: Checkout

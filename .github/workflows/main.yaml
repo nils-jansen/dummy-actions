@@ -1,0 +1,16 @@
+on: pull_request
+
+jobs:
+  check_schema:
+    runs-on: ubuntu-latest
+    name: Check the GraphQL schema against Hive
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check schema
+        uses: openformation/hive-schema-check-action@alpha1.1
+        with:
+          subgraph-name: products
+          schema-path: schema.graphql
+          hive-registry-access-token: ${{ secrets.HIVE_TOKEN }}

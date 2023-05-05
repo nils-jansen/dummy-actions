@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check_schema:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    name: Publish the GraphQL schema to Hive
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Publish schema
+        uses: openformation/hive-schema-publish-action@main
+        with:
+          service-name: products-dummy
+          service-name: https://test.com/graphql
+          schema-path: schema.graphql
+          hive-registry-access-token: ${{ secrets.HIVE_TOKEN }}
+          comment-pr: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}

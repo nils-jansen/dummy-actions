@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Check schema
-        uses: openformation/hive-schema-check-action@main
+        uses: openformation/hive-comment-schema-check-action@main
         with:
           service-name: products
           schema-path: schema.graphql

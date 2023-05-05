@@ -1,4 +1,4 @@
-Name: PR schema check
+name: PR schema check
 
 on: pull_request
 

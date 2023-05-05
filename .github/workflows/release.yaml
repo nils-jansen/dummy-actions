@@ -19,7 +19,7 @@ jobs:
         uses: openformation/hive-schema-publish-action@main
         with:
           service-name: products-dummy
-          service-name: https://test.com/graphql
+          service-url: https://test.com/graphql
           schema-path: schema.graphql
           hive-registry-access-token: ${{ secrets.HIVE_TOKEN }}
           comment-pr: true

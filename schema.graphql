@@ -87,7 +87,6 @@ type Product @key(fields: "id") @cacheControl(maxAge: 28800) {
   shop: Shop!
   description: String!
   publishDate: Date
-  targetGroups: [TargetGroup!]!
   features: [Feature]
   aggregatedAvailability: Availability
   variants(color: String, size: String, attribute: String): [ProductVariant]

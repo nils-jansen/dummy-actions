@@ -83,7 +83,7 @@ type Availability {
 type Product @key(fields: "id") @cacheControl(maxAge: 28800) {
   id: ID!
   name: String!
-  teaserImage: Image!
+  teaserImage: Image
   shop: Shop!
   description: String!
   publishDate: Date

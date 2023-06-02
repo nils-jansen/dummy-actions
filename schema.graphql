@@ -88,6 +88,8 @@ type Product @key(fields: "id") @cacheControl(maxAge: 28800) {
   description: String!
   publishDate: Date
   targetGroups: [TargetGroup]
+  aggregatedAvailability: Availability
+  otherField: String
   variants(color: String, size: String, attribute: String): [ProductVariant]
   fromPrice(color: String, size: String, attribute: String): Price
 }
